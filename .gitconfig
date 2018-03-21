@@ -1,0 +1,6 @@
+[alias]
+    co = checkout
+    b = branch
+    ba = branch -a
+    s = stash
+    sp = stash pop
