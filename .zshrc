@@ -70,8 +70,10 @@ alias cdd='cd /home/yk/Desktop'
 alias cdev='cd /home/yk/Documents/Develop'
 alias op='xdg-open'
 # others
+alias g='git'
 alias killp='pkill -f $1'
 alias wall-video='xwinwrap -ni -o 1.0 -fs -s -st -sp -b -nf -- mplayer -wid WID -quiet -loop 0 $1'
+alias jackstart='jackd -d alsa -d hw:1,0 &'
 alias aud='sudo apt-get update && sudo apt-get -y upgrade'
 alias ex='exit'
 
