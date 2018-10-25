@@ -99,6 +99,13 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" java code complete.
+let g:neocomplete#sources#omni#input_patterns.java = '\h\w*\.\w*'
+" ruby code complete.
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 " vim-sneak
 " -------------------------------------------------------------------------
@@ -135,9 +142,9 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
 " オートコンパイル
 "保存と同時にコンパイルする
-autocmd BufWritePost *.coffee silent make! 
+autocmd BufWritePost *.coffee silent make!
 "エラーがあったら別ウィンドウで表示
-autocmd QuickFixCmdPost * nested cwindow | redraw! 
+autocmd QuickFixCmdPost * nested cwindow | redraw!
 " Ctrl-cで右ウィンドウにコンパイル結果を一時表示する
 nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
 
@@ -173,6 +180,8 @@ set cursorline
 " indent
 set smartindent
 set autoindent
+" マウスで範囲選択時の行番号除外
+se mouse+=a
 " color scheme
 augroup nord-overrides
   autocmd!

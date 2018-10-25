@@ -9,8 +9,8 @@ export LANG=ja_JP.UTF-8
 autoload -Uz colors
 colors
 
-# set keybind like vi
-bindkey -v
+# set keybind like emacs
+bindkey -e
 
 # +--- Completion ---+
 # enable completion
@@ -58,17 +58,29 @@ setopt hist_reduce_blanks
 
 # +--- Alias ---+
 # show files
-alias la='ls -a --color'
-alias ll='ls -l --color'
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -G"
+  alias ll="ls -lG"
+  alias la="ls -laG"
+  alias op="open"
+  alias cdd="cd /Users/yk/Desktop"
+  ;;
+linux*)
+  alias ls='ls --color'
+  alias ll='ls -l --color'
+  alias la='ls -la --color'
+  alias op='xdg-open'
+  alias cdd='cd /home/yk/Desktop'
+  ;;
+esac
 # control files
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 # move directory
-alias cdd='cd /home/yk/Desktop'
-alias cdev='cd /home/yk/Documents/Develop'
-alias op='xdg-open'
+
 # others
 alias g='git'
 alias killp='pkill -f $1'
@@ -76,6 +88,13 @@ alias wall-video='xwinwrap -ni -o 1.0 -fs -s -st -sp -b -nf -- mplayer -wid WID 
 alias jackstart='jackd -d alsa -d hw:1,0 &'
 alias aud='sudo apt-get update && sudo apt-get -y upgrade'
 alias ex='exit'
+# adb
+alias a='adb'
+alias ad='adb devices'
+alias aro='adb root'
+alias are='adb remount'
+alias emulist='emulator -list-avds'
+alias al-c=' logcat -c'
 
 # enable alias after sudo command
 alias sudo='sudo '
