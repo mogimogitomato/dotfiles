@@ -2,8 +2,6 @@
 # + Zsh setting +
 # +-------------+
 
-# environment variable
-export LANG=ja_JP.UTF-8
 
 # use color
 autoload -Uz colors
@@ -24,7 +22,7 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
-# +--- option ---+
+# +--- Option ---+
 # show japanese file name
 setopt print_eight_bit
 # disable beep
@@ -39,8 +37,8 @@ setopt auto_cd
 setopt auto_pushd
 # ignore same directory when pushd
 setopt pushd_ignore_dups
-# use extended wildcard glob
-setopt extended_glob
+# not use extended wildcard glob
+setopt nonomatch
 
 # +--- History ---+
 # set history
@@ -56,78 +54,10 @@ setopt hist_ignore_space
 # reduce blanks when add history
 setopt hist_reduce_blanks
 
-# +--- Alias ---+
-# show files
-case "${OSTYPE}" in
-darwin*)
-  alias ls="ls -G"
-  alias ll="ls -lG"
-  alias la="ls -laG"
-  alias op="open"
-  alias cdd="cd /Users/yk/Desktop"
-  ;;
-linux*)
-  alias ls='ls --color'
-  alias ll='ls -l --color'
-  alias la='ls -la --color'
-  alias op='xdg-open'
-  alias cdd='cd /home/yk/Desktop'
-  ;;
-esac
-# control files
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias mkdir='mkdir -p'
-# move directory
+# +--- Aliases ---+
+source ~/.zshalias
 
-# others
-alias g='git'
-alias killp='pkill -f $1'
-alias wall-video='xwinwrap -ni -o 1.0 -fs -s -st -sp -b -nf -- mplayer -wid WID -quiet -loop 0 $1'
-alias jackstart='jackd -d alsa -d hw:1,0 &'
-alias aud='sudo apt-get update && sudo apt-get -y upgrade'
-alias ex='exit'
-# adb
-alias a='adb'
-alias ad='adb devices'
-alias aro='adb root'
-alias are='adb remount'
-alias emulist='emulator -list-avds'
-alias al-c=' logcat -c'
-
-# enable alias after sudo command
-alias sudo='sudo '
-# global alias
-alias -g L='| less'
-alias -g G='| grep'
-
-# +--- zplug ---+
-source ~/.zplug/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-# theme
-zplug 'denysdovhan/spaceship-prompt', use:spaceship.zsh, from:github, as:theme
-# history
-zplug "zsh-users/zaw"
-# typo completion
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
-zplug "chrissicool/zsh-256color"
-# syntax highlight
-zplug "zsh-users/zsh-syntax-highlighting"
-
-# install
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
-
-# set zaw
-if zplug check "zsh-users/zaw"; then
-    bindkey '^R' zaw-history
-fi
+# +--- Spaceship prompt ---+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship

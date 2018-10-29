@@ -1,0 +1,51 @@
+# +--- Alias ---+
+# show files
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -G"
+  alias ll="ls -lG"
+  alias la="ls -laG"
+  alias op="open"
+  alias cdd="cd /Users/yk/Desktop"
+  alias cdev="cd /Users/yk/workspace"
+  ;;
+linux*)
+  alias ls='ls --color'
+  alias ll='ls -l --color'
+  alias la='ls -la --color'
+  alias op='xdg-open'
+  alias cdd='cd /home/yk/Desktop'
+  alias cdev='cd /home/yk/workspace'
+  ;;
+esac
+# control files
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias mkdir='mkdir -p'
+# move directory
+
+# others
+alias g='git'
+alias killp='pkill -f $1'
+alias ex='exit'
+alias vi="vim"
+alias isolate='npm start --prefix /Users/yk/workspace/isolate &'
+alias tumbld='/Users/yk/workspace/tumbld/tumbld.sh $1'
+alias youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
+# adb
+alias a='adb'
+alias ad='adb devices'
+alias aro='adb root'
+alias are='adb remount'
+alias emulist='emulator -list-avds'
+alias al-c=' logcat -c'
+# pip
+alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
+alias pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
+
+# enable alias after sudo command
+alias sudo='sudo '
+# global alias
+alias -g L='| less'
+alias -g G='| grep'
