@@ -171,6 +171,8 @@ nmap <CR> i<CR><ESC>
 let mapleader = ","
 " ,のデフォルトの機能は、\で使えるように退避
 noremap \  ,
+" enable backspace key to delete words
+set backspace=indent,eol,start
 
 " DISPLAY
 " show line number
