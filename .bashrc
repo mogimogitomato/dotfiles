@@ -69,31 +69,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# zenburn color schemeê›íË
-# enable color support of ls and also add handy aliases
-eval $( dircolors -b $HOME/.dir_colors )
-alias dir='dir --color'
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-# customize aliases
-alias cdd='cd ~/Desktop'
-alias op='start'
-alias g='git'
-alias cdev='cd ~/workspace/'
-
-# adb logcat command
-alias adblog='adb logcat | logcatf --color'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $?=0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+cd ~/
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

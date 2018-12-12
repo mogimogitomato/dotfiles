@@ -208,6 +208,17 @@ set wrapscan
 " result highlighting
 set hlsearch
 
+" カーソルキー操作蓋閉じ
+nnoremap <LEFT> <NOP>
+nnoremap <RIGHT> <NOP>
+nnoremap <UP> <NOP>
+nnoremap <DOWN> <NOP>
+
+inoremap <LEFT> <NOP>
+inoremap <RIGHT> <NOP>
+inoremap <UP> <NOP>
+inoremap <DOWN> <NOP>
+
 " 引数なしでvimを開くとNERDTreeを起動
 let file_name = expand('%')
 if has('vim_starting') &&  file_name == ''
