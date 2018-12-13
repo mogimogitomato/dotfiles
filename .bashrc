@@ -87,6 +87,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# .bash_functionsÇì«Ç›çûÇﬁÇÊÇ§Ç…Ç∑ÇÈ
+if [ -f "${HOME}/.bash_functions" ]; then
+  source "${HOME}/.bash_functions"
+fi
+
 # Customize by myself
 export LANG='ja_JP.UTF-8'
 
