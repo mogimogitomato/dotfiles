@@ -23,8 +23,7 @@ call dein#add('scrooloose/nerdcommenter')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('scrooloose/nerdtree')
 call dein#add('arcticicestudio/nord-vim')
-call dein#add('kchmck/vim-coffee-script')
-
+call dein#add('fatih/vim-go')
 call dein#end()
 
 " neocomplete.vim
@@ -134,19 +133,19 @@ if !exists('g:neocomplete#text_mode_filetypes')
 endif
 let g:neocomplete#text_mode_filetypes = { "_" : 1 }
 
-" vim-coffee-script
+" vim-go
 " -------------------------------------------------------------------------
-" vimにcoffeeファイルタイプを認識させる
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
-" インデント設定
-autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
-" オートコンパイル
-"保存と同時にコンパイルする
-autocmd BufWritePost *.coffee silent make!
-"エラーがあったら別ウィンドウで表示
-autocmd QuickFixCmdPost * nested cwindow | redraw!
-" Ctrl-cで右ウィンドウにコンパイル結果を一時表示する
-nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+" errの文字列に対してhighlightを指定
+autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :match goErr /\<err\>/
+" goはハードタブを使うのがマナーのため
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 
 " +--- vim settings ---+
@@ -194,8 +193,8 @@ syntax on
 
 " TAB
 " show invisible tab
-set list listchars=tab:\▸\-
-set expandtab
+" set list listchars=tab:\▸\-
+" set expandtab
 
 " SEARCH
 " expect upper case ignore case's different
