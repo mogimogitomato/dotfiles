@@ -2,12 +2,19 @@
 # show files
 case "${OSTYPE}" in
 darwin*)
-  alias ls="ls -G"
-  alias ll="ls -lG"
-  alias la="ls -laG"
-  alias op="open"
-  alias cdd="cd /Users/yk/Desktop"
-  alias cdev="cd /Users/yk/workspace"
+  type exa > /dev/null && {
+    abbrev-alias ls="exa"
+    abbrev-alias l="exa"
+    abbrev-alias la="exa -alhg --group-directories-first --git --time-style long-iso"
+    abbrev-alias ll="exa -alhg --group-directories-first --git --time-style long-iso"
+  } || {
+    abbrev-alias l="ls -laG" # G: macOSで色を付ける
+    abbrev-alias la="ls -lahG"
+    abbrev-alias ll="ls -lahG"
+  }
+  abbrev-alias -g op='open'
+  abbrev-alias -g cdd='cd /Users/yk/Desktop'
+  abbrev-alias -g cdev='cd /Users/yk/workspace'
   ;;
 linux*)
   alias ls='ls --color'
@@ -19,33 +26,73 @@ linux*)
   ;;
 esac
 # control files
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias mkdir='mkdir -p'
+abbrev-alias -g rm='rm -i'
+abbrev-alias -g cp='cp -i'
+abbrev-alias -g mv='mv -i'
+abbrev-alias -g mkdir='mkdir -p'
 # move directory
 
 # others
-alias g='git'
-alias killp='pkill -f $1'
-alias ex='exit'
-alias vi="vim"
-alias isolate='npm start --prefix /Users/yk/workspace/isolate &'
-alias tumbld='/Users/yk/workspace/tumbld/tumbld.sh $1'
-alias youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
+abbrev-alias -g g='git'
+abbrev-alias -g killp='pkill -f $1'
+abbrev-alias -g ex='exit'
+abbrev-alias -g vi="vim"
+abbrev-alias -g isolate='npm start --prefix /Users/yk/workspace/isolate &'
+abbrev-alias -g tumbld='/Users/yk/workspace/tumbld/tumbld.sh $1'
+abbrev-alias -g youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
 # adb
-alias a='adb'
-alias ad='adb devices'
-alias aro='adb root'
-alias are='adb remount'
-alias emulist='emulator -list-avds'
-alias al-c=' logcat -c'
+abbrev-alias -g a='adb'
+abbrev-alias -g ad='adb devices'
+abbrev-alias -g aro='adb root'
+abbrev-alias -g are='adb remount'
+abbrev-alias -g emulist='emulator -list-avds'
+abbrev-alias -g al-c=' logcat -c'
 # pip
-alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
-alias pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
+abbrev-alias -g pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
+abbrev-alias -g  pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
 
 # enable alias after sudo command
-alias sudo='sudo '
-# global alias
-alias -g L='| less'
-alias -g G='| grep'
+abbrev-alias -g sudo='sudo '
+
+# utility
+abbrev-alias -g L='| less'
+abbrev-alias -g G='| grep'
+abbrev-alias -g X='| xargs'
+abbrev-alias -g T='| tail'
+abbrev-alias -g C='| cat'
+abbrev-alias -g W='| wc'
+abbrev-alias -g A='| awk'
+abbrev-alias -g S='| hist_ignore_all_dups'
+abbrev-alias tree="tree -NC" # N: 文字化け対策, C:色をつける
+abbrev-alias dp="docker ps"
+abbrev-alias di="docker images"
+abbrev-alias dce="docker-compose exec"
+abbrev-alias edi="eval \$(dinghy env)"
+abbrev-alias -g a1="awk '{print \$1}'"
+abbrev-alias -g a2="awk '{print \$2}'"
+abbrev-alias -g a3="awk '{print \$3}'"
+abbrev-alias -g a4="awk '{print \$4}'"
+abbrev-alias -g a5="awk '{print \$5}'"
+abbrev-alias -g a6="awk '{print \$6}'"
+abbrev-alias -g a7="awk '{print \$7}'"
+abbrev-alias -g a8="awk '{print \$8}'"
+abbrev-alias -g a9="awk '{print \$9}'"
+abbrev-alias -g a10="awk '{print \$10}'"
+abbrev-alias -g a11="awk '{print \$11}'"
+abbrev-alias -g a12="awk '{print \$12}'"
+abbrev-alias -g a13="awk '{print \$13}'"
+abbrev-alias -g a14="awk '{print \$14}'"
+abbrev-alias -g a15="awk '{print \$15}'"
+abbrev-alias -g a16="awk '{print \$16}'"
+abbrev-alias -g and="|"
+
+# suffix alias
+alias -s txt='cat'
+alias -s html='google-chrome'
+alias -s rb='ruby'
+alias -s py='python'
+alias -s {gif,jpg,jpeg,png,bmp}='display'
+
+# cd先のディレクトリのファイル一覧を表示
+[ -z "$ENHANCD_ROOT" ] && function chpwd { tree -L 1 } # enhancdがない場合
+[ -z "$ENHANCD_ROOT" ] || export ENHANCD_HOOK_AFTER_CD="tree -L 1" # enhancdがあるときはそのHook機構を使う
