@@ -1,25 +1,14 @@
 [gui]
     encoding = utf-8
-[core]
-    autoCRLF = true
 [diff]
     tool = WinMerge
 [difftool]
     prompt = false
-[difftool "WinMerge"]
-    cmd = 'C:/Program Files/WinMerge/WinMergeU.exe' -e -r -u -x -wl -wr -dl \"a/$MERGED\" -dr \"b/$MERGED\" \"$LOCAL\" \"$REMOTE\"
-    trustExitCode = false
 [github]
     user = mogimogitomato
-[merge]
-    tool = WinMerge
-    ff = false
 [mergetool]
     prompt = false
     keepBackup = false
-[mergetool "WinMerge"]
-    cmd = 'C:/Program Files/WinMerge/WinMergeU.exe' \"$MERGED\"
-    trustExitCode = false
 [pull]
     ff = only
 [color]
