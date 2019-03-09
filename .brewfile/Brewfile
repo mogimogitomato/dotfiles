@@ -1,0 +1,163 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew aom
+brew cairo
+brew cmake
+brew cowsay
+brew exa
+brew ffmpeg
+brew figlet
+brew flac
+brew fontconfig
+brew fortune
+brew freetype
+brew frei0r
+brew fribidi
+brew gdbm
+brew gettext
+brew ghq
+brew giflib
+brew glib
+brew gmp
+brew gnutls
+brew go
+brew graphite2
+brew harfbuzz
+brew howdoi
+brew hugo
+brew icu4c
+brew id3lib
+brew jenv
+brew jpeg
+brew jq
+brew lame
+brew leptonica
+brew libass
+brew libbluray
+brew libdvdcss
+brew libevent
+brew libffi
+brew libidn2
+brew libogg
+brew libpng
+brew libsamplerate
+brew libsndfile
+brew libsoxr
+brew libtasn1
+brew libtiff
+brew libunistring
+brew libvorbis
+brew libvpx
+brew libyaml
+brew little-cms2
+brew lua
+brew mas
+brew maven
+brew mono
+brew mysql
+brew ncurses
+brew nettle
+brew nkf
+brew nodebrew
+brew oniguruma
+brew openapi-generator
+brew opencore-amr
+brew openjpeg
+brew openssl
+brew optipng
+brew opus
+brew p11-kit
+brew pcre
+brew peco
+brew perl
+brew pidcat
+brew pixman
+brew pkg-config
+brew pngquant
+brew portaudio
+brew python
+brew qt
+brew readline
+brew rename
+brew rtmpdump
+brew rubberband
+brew ruby
+brew sdl2
+brew sl
+brew snappy
+brew speex
+brew sqlite
+brew terminal-notifier
+brew tesseract
+brew theora
+brew tig
+brew tmux
+brew tree
+brew vim
+brew webp
+brew wget
+brew x264
+brew x265
+brew xvid
+brew xz
+brew you-get
+brew youtube-dl
+brew zplug
+brew zsh
+
+tap homebrew/cask-fonts
+cask font-fira-code
+
+tap homebrew/cask-versions
+cask java6
+
+tap homebrew/cask
+cask ableton-live
+cask appium
+cask charles
+cask docker
+cask ganache
+cask gitkraken
+cask hyper
+cask intellij-idea-ce
+cask lepton
+cask musescore
+cask processing
+cask supercollider
+cask vagrant
+cask visual-studio-code
+
+tap argon/mas
+
+tap dteoh/devdocs
+cask devdocs-macos
+
+tap rcmdnk/file
+brew brew-file
+
+# Other Homebrew packages
+brew hyper
+
+# Other Cask applications
+cask android-studio
+cask brackets
+cask cyberduck
+cask firefox
+cask genymotion
+cask handbrake
+cask insomniax
+cask java8
+cask liteicon
+cask onyx
+cask realm-studio
+cask upterm
+cask virtualbox
+
+# App Store applications
+appstore 682658836 GarageBand (10.3.2)
+appstore 409183694 Keynote (8.3)
+appstore 803453959 Slack (3.3.7)
+appstore 1278508951 Trello (2.10.8)
+appstore 497799835 Xcode (10.1)
