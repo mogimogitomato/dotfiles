@@ -147,6 +147,10 @@ autocmd FileType go :match goErr /\<err\>/
 " goはハードタブを使うのがマナーのため
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
+" NERDTree
+" -------------------------------------------------------------------------
+" NERDTreeの隠しファイル表示をデフォルトで有効化
+let NERDTreeShowHidden = 1
 
 " +--- vim settings ---+
 " vim settings
