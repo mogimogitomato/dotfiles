@@ -151,6 +151,8 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 " -------------------------------------------------------------------------
 " NERDTreeの隠しファイル表示をデフォルトで有効化
 let NERDTreeShowHidden = 1
+" すべてのバッファが閉じられた時にNERDTreeが起動していれば、一緒に閉じる
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " +--- vim settings ---+
 " vim settings
@@ -222,8 +224,5 @@ inoremap <RIGHT> <NOP>
 inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
 
-" 引数なしでvimを開くとNERDTreeを起動
-let file_name = expand('%')
-if has('vim_starting') &&  file_name == ''
-  autocmd VimEnter * NERDTree ./
-endif
+" NERDTree起動、起動時カーソルをファイルに向ける
+autocmd VimEnter * NERDTree | wincmd p
