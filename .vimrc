@@ -224,5 +224,12 @@ inoremap <RIGHT> <NOP>
 inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
 
-" NERDTree起動、起動時カーソルをファイルに向ける
-autocmd VimEnter * NERDTree | wincmd p
+" NERDTree起動
+let file_name = expand('%')
+" 起動時ファイル指定がなければ、そのまま起動
+if has('vim_starting') &&  file_name == ''
+  autocmd VimEnter * NERDTree 
+else
+" 起動時ファイル指定があれば、カーソルをファイルに向ける
+  autocmd VimEnter * NERDTree | wincmd p 
+endif
