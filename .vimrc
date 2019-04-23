@@ -178,6 +178,8 @@ let mapleader = ","
 noremap \  ,
 " enable backspace key to delete words
 set backspace=indent,eol,start
+" クリップボード有効化
+set clipboard+=unnamed,autoselect
 
 " DISPLAY
 " show line number
