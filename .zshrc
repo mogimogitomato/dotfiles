@@ -58,6 +58,7 @@ setopt hist_reduce_blanks
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt spaceship
+SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
 
 # +--- Bind ghq and peco ---+
 function peco-src () {
