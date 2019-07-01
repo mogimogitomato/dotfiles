@@ -90,10 +90,13 @@ brew snappy
 brew speex
 brew sqlite
 brew terminal-notifier
+brew terraform
 brew tesseract
 brew theora
 brew tig
+brew tldr
 brew tmux
+brew tokei
 brew tree
 brew vim
 brew webp
@@ -120,6 +123,7 @@ cask charles
 cask docker
 cask ganache
 cask gitkraken
+cask gifcapture
 cask hyper
 cask intellij-idea-ce
 cask lepton
@@ -147,13 +151,17 @@ cask cyberduck
 cask firefox
 cask genymotion
 cask handbrake
+cask imagealpha
 cask insomniax
 cask java8
+cask kindle
 cask liteicon
 cask onyx
 cask realm-studio
 cask upterm
 cask virtualbox
+cask pixi-paint
+cask typora
 
 # App Store applications
 appstore 682658836 GarageBand (10.3.2)
