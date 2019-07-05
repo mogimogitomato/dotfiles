@@ -12,9 +12,17 @@ darwin*)
     abbrev-alias la="ls -lahG"
     abbrev-alias ll="ls -lahG"
   }
-  abbrev-alias -g op='open'
-  abbrev-alias -g cdd='cd /Users/yk/Desktop'
-  abbrev-alias -g cdev='cd /Users/yk/workspace'
+  type fd > /dev/null && {
+    abbrev-alias find="fd"
+  }
+  type gxargs > /dev/null && {
+    abbrev-alias -g locate='glocate'
+    abbrev-alias -g xargs='gxargs'
+    abbrev-alias -g updatedb='gupdatedb'
+  }
+  abbrev-alias op='open'
+  abbrev-alias cdd='cd /Users/yk/Desktop'
+  abbrev-alias cdev='cd /Users/yk/workspace'
   ;;
 linux*)
   alias ls='ls --color'
@@ -33,23 +41,23 @@ abbrev-alias -g mkdir='mkdir -p'
 # move directory
 
 # others
-abbrev-alias -g g='git'
-abbrev-alias -g killp='pkill -f $1'
-abbrev-alias -g ex='exit'
-abbrev-alias -g vi="vim"
-abbrev-alias -g isolate='npm start --prefix /Users/yk/workspace/isolate &'
-abbrev-alias -g tumbld='/Users/yk/workspace/tumbld/tumbld.sh $1'
-abbrev-alias -g youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
+abbrev-alias g='git'
+abbrev-alias killp='pkill -f $1'
+abbrev-alias ex='exit'
+abbrev-alias vi="vim"
+abbrev-alias isolate='npm start --prefix /Users/yk/workspace/isolate &'
+abbrev-alias tumbld='/Users/yk/workspace/tumbld/tumbld.sh $1'
+abbrev-alias youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
 # adb
-abbrev-alias -g a='adb'
-abbrev-alias -g ad='adb devices'
-abbrev-alias -g aro='adb root'
-abbrev-alias -g are='adb remount'
-abbrev-alias -g emulist='emulator -list-avds'
-abbrev-alias -g al-c=' logcat -c'
+abbrev-alias a='adb'
+abbrev-alias ad='adb devices'
+abbrev-alias aro='adb root'
+abbrev-alias are='adb remount'
+abbrev-alias emulist='emulator -list-avds'
+abbrev-alias al-c=' logcat -c'
 # pip
-abbrev-alias -g pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
-abbrev-alias -g  pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
+abbrev-alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
+abbrev-alias pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
 
 # enable alias after sudo command
 abbrev-alias -g sudo='sudo '
@@ -91,6 +99,7 @@ alias -s txt='cat'
 alias -s html='google-chrome'
 alias -s rb='ruby'
 alias -s py='python'
+alias -s php='php -f'
 alias -s {gif,jpg,jpeg,png,bmp}='display'
 
 # cd先のディレクトリのファイル一覧を表示
