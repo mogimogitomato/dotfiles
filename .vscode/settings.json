@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Nord",
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.enablePreview": false,
+    "files.autoSave": "afterDelay",
+    "workbench.startupEditor": "none",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.minimap.enabled": false,
+    "markdown.preview.breaks": true,
+    "editor.largeFileOptimizations": false,
+    "[ruby]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveTimeout": 10000,
+    },
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useLanguageServer": true,
+    "solargraph.definitions": true,
+    "solargraph.diagnostics": true
+}
