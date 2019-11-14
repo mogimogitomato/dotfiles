@@ -97,7 +97,8 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: 'C:\\Program Files\\Git\\bin\\bash.exe',
+    // shell: 'C:\\Program Files\\Git\\bin\\bash.exe',
+       shell: '/usr/local/bin/zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -147,8 +148,12 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-  'nord-hyper',
-  'hyper-font-smoothing',
+    'nord-hyper',
+    'hyper-font-smoothing',
+    "hyper-search",
+    "hypercwd",
+    "hyper-tab-icons",
+    "hyper-statusline"
   ],
 
   // in development, you can create a directory under
