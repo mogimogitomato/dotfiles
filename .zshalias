@@ -20,6 +20,7 @@ darwin*)
     abbrev-alias -g xargs='gxargs'
     abbrev-alias -g updatedb='gupdatedb'
   }
+  abbrev-alias -g P='| pbcopy'
   abbrev-alias op='open'
   abbrev-alias cdd='cd /Users/yk/Desktop'
   abbrev-alias cdev='cd /Users/yk/workspace'
