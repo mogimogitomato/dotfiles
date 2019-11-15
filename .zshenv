@@ -4,17 +4,14 @@
 # Environment variable
 export LANG=ja_JP.UTF-8
 
-# Set Jenv PATH
-if which jenv > /dev/null; then
-  # JENV_ROOTがemptyの場合、'${HOME}/.jenv'がrootと設定される
-  export JENV_ROOT=/usr/local/var/jenv
-  eval "$(jenv init -)"
-fi
+# add /usr/local/bin to PATH
+export PATH="/usr/local/bin:$PATH"
 
 # Set nodebrew PATH
-export PATH=$PATH:/Users/yk/.nodebrew/current/bin
+export PATH=$PATH:$HOME/.nodebrew/current/bin
+
 # add android-sdk PATH
-export PATH=$PATH:/Users/yk/Library/Android/sdk/platform-tools
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # Set Go path
 export GOPATH="$HOME/go"
@@ -24,7 +21,22 @@ export PATH="$PATH:$GOPATH/bin"
 export FLUTTERPATH="$HOME/Framework/flutter"
 export PATH="$PATH:$FLUTTERPATH/bin"
 
+# Set Jenv PATH
+if which jenv > /dev/null; then
+  # JENV_ROOTがemptyの場合、'${HOME}/.jenv'がrootと設定される
+  export JENV_ROOT=/usr/local/var/jenv
+  eval "$(jenv init -)"
+fi
+
+# Set rbenv Path
+eval "$(rbenv init -)"
+
+# Set pyenv Path
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Set SDKMAN path
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/yk/.sdkman"
-[[ -s "/Users/yk/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/yk/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

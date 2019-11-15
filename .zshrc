@@ -21,7 +21,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
                    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
-
 # +--- Option ---+
 # show japanese file name
 setopt print_eight_bit
@@ -54,12 +53,6 @@ setopt hist_ignore_space
 # reduce blanks when add history
 setopt hist_reduce_blanks
 
-# +--- Spaceship prompt ---+
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
-SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
-
 # +--- Bind ghq and peco ---+
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
@@ -72,15 +65,37 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
-# +--- meigen ---+
-# lain meigen
-date; fortune meigen | cowsay -f lain -n -W
+# +--- custom shortcut key bindings ---+
+: "key binding" && {
+  bindkey -e # emacs キーマップを選択
+  : "Ctrl-Yで上のディレクトリに移動できる" && {
+    function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line }
+    zle -N cd-up
+    bindkey "^Y" cd-up
+  }
+  : "Ctrl-Wでパスの文字列などをスラッシュ単位でdeleteできる" && {
+    autoload -U select-word-style
+    select-word-style bash
+  }
+  : "Ctrl-[で直前コマンドの単語を挿入できる" && {
+    autoload -Uz smart-insert-last-word
+    zstyle :insert-last-word match '*([[:alpha:]/\\]?|?[[:alpha:]/\\])*' # [a-zA-Z], /, \ のうち少なくとも1文字を含む長さ2以上の単語
+    zle -N insert-last-word smart-insert-last-word
+    bindkey '^[' insert-last-word
+    # see http://qiita.com/mollifier/items/1a9126b2200bcbaf515f
+  }
+}
 
+# +--- meigen ---+
+# TODO 手順をまとめるまで凍結
+# lain meigen
+# date; fortune meigen | cowsay -f lain -n -W
 
 # +--- Plugin ---+
 export ZPLUG_HOME=/usr/local/opt/zplug
 [ -f "$ZPLUG_HOME/init.zsh" ] || brew install zplug
 source $ZPLUG_HOME/init.zsh
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zsh-users/zsh-completions"
 zplug "supercrabtree/k"
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
@@ -92,8 +107,31 @@ zplug "paulirish/git-open", as:plugin # GitHub, GitLab, BitBucketを開けるよ
 zplug check || zplug install
 zplug load
 
+# +--- Spaceship prompt ---+
+SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
+
 # +--- Aliases ---+
 source ~/.zshalias
+
+# +--- sub command ---+
+# worktree移動
+function cdworktree() {
+    # カレントディレクトリがGitリポジトリ上かどうか
+    git rev-parse &>/dev/null
+    if [ $? -ne 0 ]; then
+        echo fatal: Not a git repository.
+        return
+    fi
+
+    local selectedWorkTreeDir=`git worktree list | fzf | awk '{print $1}'`
+
+    if [ "$selectedWorkTreeDir" = "" ]; then
+        # Ctrl-C.
+        return
+    fi
+
+    cd ${selectedWorkTreeDir}
+}
 
 # +--- Setting for Hyper and Hyper-tab-icons ---+
 # Override auto-title when static titles are desired ($ title My new title)
@@ -117,3 +155,5 @@ preexec() {
    if overridden; then return; fi
    printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
 }
+
+cat $HOME/workspace/dotfiles/terminal_shortcut
