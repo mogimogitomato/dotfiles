@@ -11,7 +11,7 @@ ln -s "$SCRIPT_DIR/keybindings.json" "${VSCODE_SETTING_DIR}/keybindings.json"
 
 # check package's install state
 ##  font-fira-code
-eval `gem list | grep \"solargraph\"`
+eval `brew cask list | grep \"font-fira-code\"`
 if [ $? = 0 ]; then
   echo "\nfont-fira-code isn't install yet. start installing...\n\n"
   eval `brew tap homebrew/cask-fonts && brew cask install font-fira-code`
