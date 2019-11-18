@@ -5,6 +5,8 @@
     "files.autoSave": "afterDelay",
     "workbench.startupEditor": "none",
     "editor.copyWithSyntaxHighlighting": false,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "markdown.preview.breaks": true,
     "editor.largeFileOptimizations": false,
@@ -22,4 +24,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "editor.fontSize": 14,
+    "editor.formatOnType": true,
+    "workbench.fontAliasing": "antialiased",
 }
