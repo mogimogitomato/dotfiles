@@ -13,6 +13,7 @@ dbaeumer.vscode-eslint
 eamodio.gitlens
 ecmel.vscode-html-css
 eg2.tslint
+esbenp.prettier-vscode
 GrapeCity.gc-excelviewer
 Gruntfuggly.todo-tree
 HookyQR.beautify
@@ -24,7 +25,6 @@ kaiwood.endwise
 kogai.regex-railroad-diagrams
 kumar-harsh.graphql-for-vscode
 Mikael.Angular-BeastCode
-misogi.ruby-rubocop
 mquandalle.graphql
 mrmlnc.vscode-jade-snippets
 mrmlnc.vscode-pugbeautify

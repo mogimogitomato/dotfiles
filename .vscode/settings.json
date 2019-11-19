@@ -5,6 +5,8 @@
     "files.autoSave": "afterDelay",
     "workbench.startupEditor": "none",
     "editor.copyWithSyntaxHighlighting": false,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "markdown.preview.breaks": true,
     "editor.largeFileOptimizations": false,
@@ -24,4 +26,7 @@
     },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontSize": 14,
+    "editor.formatOnType": true,
+    "workbench.fontAliasing": "antialiased",
 }
