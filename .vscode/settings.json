@@ -7,7 +7,7 @@
     "editor.copyWithSyntaxHighlighting": false,
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "markdown.preview.breaks": true,
     "editor.largeFileOptimizations": false,
     "[ruby]": {
