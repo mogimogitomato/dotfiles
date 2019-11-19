@@ -21,17 +21,17 @@ darwin*)
     abbrev-alias -g updatedb='gupdatedb'
   }
   abbrev-alias -g P='| pbcopy'
-  abbrev-alias op='open'
-  abbrev-alias cdd='cd /Users/yk/Desktop'
-  abbrev-alias cdev='cd /Users/yk/workspace'
+  abbrev-alias -g op='open'
+  abbrev-alias -g cdd='cd $HOME/Desktop'
+  abbrev-alias -g cdev='cd $HOME/workspace'
   ;;
 linux*)
   alias ls='ls --color'
   alias ll='ls -l --color'
   alias la='ls -la --color'
   alias op='xdg-open'
-  alias cdd='cd /home/yk/Desktop'
-  alias cdev='cd /home/yk/workspace'
+  alias cdd='cd $HOME/Desktop'
+  alias cdev='cd $HOME/workspace'
   ;;
 esac
 # control files
@@ -42,26 +42,32 @@ abbrev-alias -g mkdir='mkdir -p'
 # move directory
 
 # others
-abbrev-alias g='git'
-abbrev-alias killp='pkill -f $1'
-abbrev-alias ex='exit'
-abbrev-alias vi="vim"
-abbrev-alias isolate='npm start --prefix /Users/yk/workspace/isolate &'
-abbrev-alias tumbld='/Users/yk/workspace/tumbld/tumbld.sh $1'
-abbrev-alias youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
+abbrev-alias -g g='git'
+abbrev-alias -g killp='pkill -f $1'
+abbrev-alias -g ex='exit'
+abbrev-alias -g vi="vim"
+abbrev-alias -g isolate='npm start --prefix $HOME/workspace/isolate &'
+abbrev-alias -g tumbld='$HOME/workspace/tumbld/tumbld.sh $1'
+abbrev-alias -g youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
 # adb
-abbrev-alias a='adb'
-abbrev-alias ad='adb devices'
-abbrev-alias aro='adb root'
-abbrev-alias are='adb remount'
-abbrev-alias emulist='emulator -list-avds'
-abbrev-alias al-c=' logcat -c'
+abbrev-alias -g a='adb'
+abbrev-alias -g ad='adb devices'
+abbrev-alias -g aro='adb root'
+abbrev-alias -g are='adb remount'
+abbrev-alias -g emulist='emulator -list-avds'
+abbrev-alias -g al-c=' logcat -c'
 # pip
-abbrev-alias pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
-abbrev-alias pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
+abbrev-alias -g pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
+abbrev-alias -g  pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
 
 # enable alias after sudo command
 abbrev-alias -g sudo='sudo '
+
+# hear master google
+alias h='function hdi(){ howdoi $* -c -n 3; }; hdi'
+
+# live coding
+alias orca='npm start --prefix ~/workspace/LiveCoding/ORCA_PROJ/Orca/desktop &'
 
 # utility
 abbrev-alias -g L='| less'
@@ -100,7 +106,6 @@ alias -s txt='cat'
 alias -s html='google-chrome'
 alias -s rb='ruby'
 alias -s py='python'
-alias -s php='php -f'
 alias -s {gif,jpg,jpeg,png,bmp}='display'
 
 # cd先のディレクトリのファイル一覧を表示
