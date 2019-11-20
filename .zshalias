@@ -58,16 +58,16 @@ abbrev-alias -g emulist='emulator -list-avds'
 abbrev-alias -g al-c=' logcat -c'
 # pip
 abbrev-alias -g pipup='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U --user'
-abbrev-alias -g  pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
+abbrev-alias -g pip3up='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs pip3 install -U --user'
 
 # enable alias after sudo command
 abbrev-alias -g sudo='sudo '
 
 # hear master google
-alias h='function hdi(){ howdoi $* -c -n 3; }; hdi'
+abbrev-alias -g h='function hdi(){ howdoi $* -c -n 3; }; hdi'
 
 # live coding
-alias orca='npm start --prefix ~/workspace/LiveCoding/ORCA_PROJ/Orca/desktop &'
+abbrev-alias -g orca='npm start --prefix ~/workspace/LiveCoding/ORCA_PROJ/Orca/desktop &'
 
 # utility
 abbrev-alias -g L='| less'
