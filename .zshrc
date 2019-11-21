@@ -66,7 +66,7 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
-# +--- custom shortcut key bindings ---+
+# +--- Custom shortcut key bindings ---+
 : "key binding" && {
   bindkey -e # emacs キーマップを選択
   : "Ctrl-Yで上のディレクトリに移動できる" && {
@@ -87,10 +87,10 @@ bindkey '^]' peco-src
   }
 }
 
-# +--- meigen ---+
+# +--- Meigen ---+
 # TODO 手順をまとめるまで凍結
 # lain meigen
-# date; fortune meigen | cowsay -f lain -n -W
+date; fortune meigen | cowsay -f lain -n -W
 
 # +--- Plugin ---+
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -114,7 +114,7 @@ SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
 # +--- Aliases ---+
 source ~/.zshalias
 
-# +--- sub command ---+
+# +--- Sub command ---+
 # worktree移動
 function cdworktree() {
     # カレントディレクトリがGitリポジトリ上かどうか
@@ -133,6 +133,10 @@ function cdworktree() {
 
     cd ${selectedWorkTreeDir}
 }
+
+# +--- Env init ---+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # +--- Setting for Hyper and Hyper-tab-icons ---+
 # Override auto-title when static titles are desired ($ title My new title)
