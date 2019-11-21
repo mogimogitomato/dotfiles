@@ -18,8 +18,9 @@ compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+                                            /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
+
 
 # +--- Option ---+
 # show japanese file name
@@ -88,9 +89,46 @@ bindkey '^]' peco-src
 }
 
 # +--- Meigen ---+
-# TODO 手順をまとめるまで凍結
 # lain meigen
 date; fortune meigen | cowsay -f lain -n -W
+# cat <<EOF | cowsay -f lain -n -W
+# 鳥を見た人世の爪の跡、虫の書いた嘘が溢れる、
+# それは両方の刃に挟まれて、鉄を手繰り寄せ、
+# 四月は過ぎて行く、
+# 
+# 飛来する幽霊と笛の音、虚ろな遺灰の中を探る、
+# それは安心の輪に満たされて、虹色の居間で、
+# 
+# 二月の様に空をなぞって、火が着く様に雲を塞ぎ込んでいく、
+# 
+# 土に滲む海の水が蛇の針を逆立てて、息を呑んだ異形は騒々しく池に飛び込んだ、
+# 
+# 線の国で狐が宛てる手紙、壁画の裏で消える、眼を隠しても見える酷く優雅で煩瑣な世界、
+# そこでずっと暮らしていくと右手外し片目で探る未来、きっとそれは永遠に続く人間に良く似た外の夢
+# 
+# 被害者は寝殿の蚊帳の外、星の無い夕が忙しく鳴る、
+# 水は表情だけを認める、霞むような色で今日が限りなく透明な風になる、
+# 
+# 意図の無い様な手のシグナル、それは平等すらも絆される、
+# 何時も騒ぐだけで火が付く道理、絹を纏って、見え透いた情に縋る瞳、
+# 
+# 飛んで行く先に沈む羽の欠片、聡明な怪の山、近くにある一人の闇に膝を合わせて泣いた、
+# 
+# 我楽多を産んだ、湿る鯖は法律を何度も破っている、
+# 消えてしまう前に溶け出したあの光を見出して、
+# 
+# 「線の声が聞こえた！」照らす陰にただ願った、
+# 偶然に汲んだ首飾りでも、変わらないその日々が届くまで、
+# 
+# 「ここでずっと暮らしていくよ」祈る叫びは木霊する瞬間に、
+# きっとそれは永遠に続く、人間によく似た外の夢を見た外に似た人の夢
+# 
+# もし次の人生を選ぶなら、指示の無い方へと手を翳す、
+# それは表情からも読み取れる、君にとって僕は何の舵になる？
+# 
+# 心外な胸の音、意味が無い様で嬉しくなる、
+# 花を擁する声で振り返る、いつも側にある人外達の夢
+# EOF
 
 # +--- Plugin ---+
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -150,15 +188,15 @@ gitDirty() { [[ $(git status 2> /dev/null | grep -o '\w\+' | tail -n1) != ("clea
 
 # Show cwd when shell prompts for input.
 precmd() {
-   if overridden; then return; fi
-   cwd=${$(pwd)##*/} # Extract current working dir only
-   print -Pn "\e]0;$cwd$(gitDirty)\a" # Replace with $pwd to show full path
+  if overridden; then return; fi
+  cwd=${$(pwd)##*/} # Extract current working dir only
+  print -Pn "\e]0;$cwd$(gitDirty)\a" # Replace with $pwd to show full path
 }
 
 # Prepend command (w/o arguments) to cwd while waiting for command to complete.
 preexec() {
-   if overridden; then return; fi
-   printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
+  if overridden; then return; fi
+  printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
 }
 
 cat $HOME/workspace/dotfiles/terminal_shortcut
