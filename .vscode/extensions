@@ -19,7 +19,6 @@ Gruntfuggly.todo-tree
 HookyQR.beautify
 Hridoy.rails-snippets
 humao.rest-client
-HvyIndustries.crane
 jeremyrajan.webpack
 kaiwood.endwise
 kogai.regex-railroad-diagrams
@@ -34,13 +33,16 @@ ms-mssql.mssql
 ms-python.python
 ms-vscode.Go
 Nash.awesome-flutter-snippets
+octref.vetur
 oderwat.indent-rainbow
 patbenatar.advanced-new-file
 PKief.material-icon-theme
 rbbit.typescript-hero
 rebornix.ruby
 redhat.vscode-yaml
+sianglim.slim
 steditor.line-endings
 Tyriar.sort-lines
 vscodevim.vim
 wayou.vscode-todo-highlight
+wingrunr21.vscode-ruby
