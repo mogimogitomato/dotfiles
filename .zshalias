@@ -54,6 +54,7 @@ abbrev-alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 
 # pet
 abbrev-alias -g pets='pet search'
+abbrev-alias -g petcp='pet search | pbcopy'
 abbrev-alias -g pete='pet exec'
 abbrev-alias -g petn='pet new -t'
 
