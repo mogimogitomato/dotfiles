@@ -200,3 +200,9 @@ preexec() {
 }
 
 cat $HOME/workspace/dotfiles/terminal_shortcut
+
+prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new -t `printf %q "$PREV"`"
+}
+
