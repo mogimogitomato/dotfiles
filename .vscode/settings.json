@@ -29,4 +29,10 @@
     "editor.fontSize": 14,
     "editor.formatOnType": true,
     "workbench.fontAliasing": "antialiased",
+    "indentRainbow.colors": [
+        "rgba(129,161,193,0.07)",
+        "rgba(180,142,173,0.07)",
+        "rgba(235,203,139,0.07)",
+        "rgba(143,188,187,0.07)"
+    ]
 }
