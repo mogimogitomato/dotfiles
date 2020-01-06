@@ -11,20 +11,19 @@ ln -s "$SCRIPT_DIR/keybindings.json" "${VSCODE_SETTING_DIR}/keybindings.json"
 
 # check package's install state
 ##  font-fira-code
-eval `brew cask list | grep \"font-fira-code\"`
-if [ $? = 1 ]; then
-  echo "\nfont-fira-code isn't install yet. start installing...\n\n"
-  eval `brew tap homebrew/cask-fonts && brew cask install font-fira-code`
+if brew cask ls --versions font-fira-code > /dev/null; then
+  echo "font-fira-code already installed.\n"
 else
-  echo "font-fira-code already installed."
+  echo "font-fira-code isn't install yet. start installing...\n\n"
+  eval `brew tap homebrew/cask-fonts && brew cask install font-fira-code`
 fi
 ##  solargraph(依存パッケージとしてrubocopもinstallされる)
-eval `gem list | grep \"solargraph\"`
-if [ $? = 1 ]; then
-  echo "\nsolargraph isn't install yet. start installing...\n\n"
-  eval `sudo gem install solargraph`
+result=`gem list -i solargraph`
+if [ $result = 'true' ]; then
+  echo "snnolargraph already installed.\n"
 else
-  echo "solargraph already installed."
+  echo "solargraph isn't install yet. start installing...\n\n"
+  sudo gem install solargraph
 fi
 
 cat ./extensions | while read line
