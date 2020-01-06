@@ -23,6 +23,7 @@ call dein#add('scrooloose/nerdcommenter')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('scrooloose/nerdtree')
 call dein#add('arcticicestudio/nord-vim')
+call dein#add('ryanoasis/vim-devicons')
 call dein#add('fatih/vim-go')
 call dein#end()
 
