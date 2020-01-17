@@ -81,11 +81,11 @@ abbrev-alias -g orca='npm start --prefix ~/workspace/LiveCoding/ORCA_PROJ/Orca/d
 
 # pipe
 abbrev-alias -g L='| less'
-abbrev-alias -g G='| grep'
+abbrev-alias -g G='| grep -rin --exclude-dir=""'
 abbrev-alias -g X='| xargs'
 abbrev-alias -g T='| tail'
 abbrev-alias -g C='| cat'
-abbrev-alias -g W='| wc'
+abbrev-alias -g W='| wc -l'
 abbrev-alias -g A='| awk'
 abbrev-alias -g S='| hist_ignore_all_dups'
 

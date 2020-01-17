@@ -15,6 +15,7 @@ brew fortune
 brew freetype
 brew frei0r
 brew fribidi
+brew fzf
 brew gdbm
 brew gettext
 brew ghq
@@ -32,6 +33,8 @@ brew id3lib
 brew jenv
 brew jpeg
 brew jq
+brew kubernetes-cli
+brew kustomize
 brew lame
 brew leptonica
 brew libass
@@ -89,6 +92,7 @@ brew sl
 brew snappy
 brew speex
 brew sqlite
+brew stern
 brew terminal-notifier
 brew terraform
 brew tesseract
