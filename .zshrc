@@ -143,6 +143,7 @@ zplug "junegunn/fzf", use:shell/completion.zsh # cd **[TAB], vim **[TAB]など�
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "momo-lab/zsh-abbrev-alias"
 zplug "paulirish/git-open", as:plugin # GitHub, GitLab, BitBucketを開けるようにするコマンド … https://github.com/paulirish/git-open
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug check || zplug install
 zplug load
 
