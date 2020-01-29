@@ -42,6 +42,9 @@ abbrev-alias -g mkdir='mkdir -p'
 alias cdd='cd $HOME/Desktop'
 alias cdev='cd $HOME/workspace'
 
+# search
+abbrev-alias -g gr='grep -rin --exclude-dir=""'
+
 # etc
 abbrev-alias -g g='git'
 abbrev-alias -g killp='pkill -f $1'
@@ -81,7 +84,7 @@ abbrev-alias -g orca='npm start --prefix ~/workspace/LiveCoding/ORCA_PROJ/Orca/d
 
 # pipe
 abbrev-alias -g L='| less'
-abbrev-alias -g G='| grep -rin --exclude-dir=""'
+abbrev-alias -g G='| grep'
 abbrev-alias -g X='| xargs'
 abbrev-alias -g T='| tail'
 abbrev-alias -g C='| cat'
