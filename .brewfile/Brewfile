@@ -3,6 +3,7 @@
 
 tap homebrew/core
 brew aom
+brew bat
 brew cairo
 brew cmake
 brew cowsay
@@ -82,6 +83,7 @@ brew pngquant
 brew portaudio
 brew python
 brew qt
+brew rbenv
 brew readline
 brew rename
 brew rtmpdump
@@ -120,6 +122,12 @@ cask font-fira-code
 tap homebrew/cask-versions
 cask java6
 
+tap knqyf263/pet
+brew pet
+
+tap koekeishiya/formulae
+brew yabai
+
 tap homebrew/cask
 cask ableton-live
 cask appium
@@ -153,6 +161,7 @@ cask android-studio
 cask brackets
 cask cyberduck
 cask firefox
+cask font-firacode-nerd-font
 cask genymotion
 cask handbrake
 cask imagealpha
