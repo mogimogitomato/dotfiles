@@ -23,6 +23,7 @@ darwin*)
   }
   abbrev-alias -g P='| pbcopy'
   abbrev-alias -g op='open'
+  abbrev-alias -g delds='find . -name ".DS_Store" -type f -ls -delete'
   ;;
 linux*)
   alias ls='ls --color'

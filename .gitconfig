@@ -31,7 +31,7 @@
     bal = back --list
     bl = for-each-ref --sort=-committerdate --format='%(authordate:iso8601) %(refname:short)' refs/heads/
     k = !gitk --all --max-count=200 &
-    s = status -sb
+    s = status
     ci = commit
     cim = commit -m
     ciam = commit --amend

@@ -21,18 +21,25 @@
     "ruby.useLanguageServer": true,
     "solargraph.definitions": true,
     "solargraph.diagnostics": true,
+    "solargraph.useBundler": false,
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
     },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.fontSize": 14,
     "editor.formatOnType": true,
     "workbench.fontAliasing": "antialiased",
+    "editor.padding.top": 20,
+    "editor.padding.bottom": 20,
+    "editor.definitionLinkOpensInPeek": true,
     "indentRainbow.colors": [
         "rgba(129,161,193,0.07)",
         "rgba(180,142,173,0.07)",
         "rgba(235,203,139,0.07)",
         "rgba(143,188,187,0.07)"
-    ]
+    ],
+    "todo-tree.tree.showScanModeButton": false,
+    "solargraph.commandPath": "${env:HOME}/.rbenv/shims/solargraph"
 }
