@@ -2,6 +2,9 @@
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
 
+# set home environment
+sed -i '' -e "s|\$.*env:HOME}|$HOME|" settings.json
+
 # redefine settings
 rm "$VSCODE_SETTING_DIR/settings.json"
 ln -s "$SCRIPT_DIR/settings.json" "${VSCODE_SETTING_DIR}/settings.json"
@@ -20,7 +23,7 @@ fi
 ##  solargraph(依存パッケージとしてrubocopもinstallされる)
 result=`gem list -i solargraph`
 if [ $result = 'true' ]; then
-  echo "snnolargraph already installed.\n"
+  echo "solargraph already installed.\n"
 else
   echo "solargraph isn't install yet. start installing...\n\n"
   sudo gem install solargraph
