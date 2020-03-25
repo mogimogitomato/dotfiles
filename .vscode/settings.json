@@ -12,16 +12,20 @@
     "editor.largeFileOptimizations": false,
     "[ruby]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveTimeout": 5000,
+        "editor.formatOnSave": true
     },
     "ruby.format": "rubocop",
-    "ruby.lint": { "rubocop": true },
+    "ruby.lint": {
+        "rubocop": true
+    },
     "ruby.intellisense": "rubyLocate",
     "ruby.useLanguageServer": true,
+    "solargraph.commandPath": "${env:HOME}/.rbenv/shims/solargraph",
     "solargraph.definitions": true,
     "solargraph.diagnostics": true,
     "solargraph.useBundler": false,
+    "solargraph.autoformat": true,
+    "solargraph.formatting": true,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.tabSize": 2
@@ -34,12 +38,21 @@
     "editor.padding.top": 20,
     "editor.padding.bottom": 20,
     "editor.definitionLinkOpensInPeek": true,
+    "vim.disableExtension": false,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    "vim.cursorStylePerMode":{
+        "normal": "line",
+        "insert": "line",
+        "replace": "line",
+        "visual": "line",
+        "visualblock": "line",
+        "visualline": "line"
+    },
     "indentRainbow.colors": [
         "rgba(129,161,193,0.07)",
         "rgba(180,142,173,0.07)",
         "rgba(235,203,139,0.07)",
         "rgba(143,188,187,0.07)"
     ],
-    "todo-tree.tree.showScanModeButton": false,
-    "solargraph.commandPath": "${env:HOME}/.rbenv/shims/solargraph"
+    "todo-tree.tree.showScanModeButton": false
 }

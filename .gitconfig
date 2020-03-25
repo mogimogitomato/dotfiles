@@ -70,3 +70,6 @@
     repo = town repo
     ship = town ship
     sync = town sync
+[user]
+	email = osakana.yano49@gmail.com
+	name = YK
