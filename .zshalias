@@ -62,6 +62,9 @@ abbrev-alias -g petcp='pet search | pbcopy'
 abbrev-alias -g pete='pet exec'
 abbrev-alias -g petn='pet new -t'
 
+# bat
+abbrev-alias -g cat='bat'
+
 # adb
 abbrev-alias -g a='adb'
 abbrev-alias -g ad='adb devices'
