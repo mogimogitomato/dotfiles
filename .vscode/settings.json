@@ -30,6 +30,11 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.tabSize": 2
     },
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
     "editor.suggestSelection": "first",
     "editor.fontSize": 14,
     "editor.formatOnType": true,
@@ -37,6 +42,10 @@
     "editor.padding.top": 20,
     "editor.padding.bottom": 20,
     "editor.definitionLinkOpensInPeek": true,
+    "editor.renderLineHighlight": "gutter",
+    "workbench.colorCustomizations": {
+      "editorLineNumber.activeForeground": "#D8DEE9"
+    },
     "vim.disableExtension": false,
     "vim.mouseSelectionGoesIntoVisualMode": false,
     "vim.cursorStylePerMode":{
