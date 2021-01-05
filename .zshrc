@@ -141,7 +141,7 @@ zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "junegunn/fzf", use:shell/key-bindings.zsh # Ctrl-Rで履歴検索、Ctrl-Tでファイル名検索補完できる
 zplug "junegunn/fzf", use:shell/completion.zsh # cd **[TAB], vim **[TAB]などでファイル名を補完できる
 zplug "b4b4r07/enhancd", use:init.sh
-zplug "b4b4r07/git-br", as:command, use:'git-br'
+zplug "mogimogitomato/git-br", as:command, use:'git-br'
 zplug "momo-lab/zsh-abbrev-alias"
 zplug "paulirish/git-open", as:plugin # GitHub, GitLab, BitBucketを開けるようにするコマンド … https://github.com/paulirish/git-open
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
