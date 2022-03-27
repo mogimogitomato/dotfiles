@@ -1,9 +1,7 @@
-#### 便利なショートカット / コマンドの備忘録
-rg          高速なgrep
+#### .zshrcで設定しているコマンドの備忘
 ctrl + y    一階層上に上がる
-ctrl + w    カーソル位置から手前側に向かって単語単位で削除(スラッシュ区切りの場合も区切り単位で消せる様設定済)
+ctrl + w    カーソル位置から手前側に向かって単語単位で削除
 Ctrl-[      直前コマンドの単語を挿入
 
-
-#### VS Code shortcut
-cmd + alt + N   新規ファイルを作成(patbenatar.advanced-new-file)
+pet-prev    直前に実行したコマンドをpetに追加する
+Ctrl-]      ghq + pecoでworkspace内のリポジトリを検索し移動

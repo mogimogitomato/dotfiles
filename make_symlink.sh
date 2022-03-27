@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOT_FILES=( .bash_alias .bash_functions .bashrc .gitconfig .hyper.js .vimrc .zshalias .zshenv .zshrc .yabairc)
+DOT_FILES=( .gitconfig .hyper.js .vimrc .zshalias .zshenv .zshrc .yabairc)
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 ORG_DIR=$HOME/dotfile_org
 
