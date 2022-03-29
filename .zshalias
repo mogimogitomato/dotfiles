@@ -41,6 +41,7 @@ abbrev-alias -g mkdir='mkdir -p'
 
 # move directory
 alias cdd='cd $HOME/Desktop'
+alias cdev='cd $HOME/workspace'
 
 # search
 abbrev-alias -g gr='grep -rin --exclude-dir=""'

@@ -1,9 +1,6 @@
 # dotfiles
 
 - loading dotfile under the root folder    
-.bash_alias  
-.bash_functions  
-.bashrc  
 .gitconfig  
 .hyper.js  
 .vimrc  
