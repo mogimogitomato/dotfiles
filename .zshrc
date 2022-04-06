@@ -146,6 +146,9 @@ preexec() {
 # +--- Env init ---+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+eval $(thefuck --alias)
+
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init zsh post)"
+
 

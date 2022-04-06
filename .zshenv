@@ -17,3 +17,6 @@ export PATH="$PATH:$GOPATH/bin"
 # Set rbenv Path
 export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"
+
+# Set color scheme for bat
+export BAT_THEME="Nord"
