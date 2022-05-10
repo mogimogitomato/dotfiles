@@ -21,7 +21,7 @@
     ci = commit
     ci-am = commit --amend
     ci-m = commit -m
-    co-ti = "!f(){ git branch | grep $1 | xargs git checkout;};f"
+    co = checkout
     d = diff
     dc = diff --cached
     dw  = diff --color-words --word-diff-regex='[-a-zA-Z0-9_]+|.'
