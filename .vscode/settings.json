@@ -66,6 +66,12 @@
         "*.tidal": "haskell"
     },
     "todo-tree.tree.showScanModeButton": false,
+    "terminal.integrated.profiles.osx": {
+        "osx-zsh": {
+          "path": "/bin/zsh",
+        }
+      },
+      "terminal.integrated.defaultProfile.osx": "osx-zsh",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 13,
