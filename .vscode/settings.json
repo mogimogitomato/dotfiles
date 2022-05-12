@@ -74,4 +74,10 @@
         "FIG_NEW_SESSION": "1"
     },
     "editor.accessibilitySupport": "off",
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "erb": "html"
+    }
 }
