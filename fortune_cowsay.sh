@@ -1,10 +1,10 @@
 #!/bin/sh
 function getFortuneVersion() {
-  eval $1=`brew list --versions | grep fortune | sed 's/fortune //g'`
+  eval $1=`brew list --formula --versions | grep fortune | sed 's/fortune //g'`
 }
 
 function getCowsayVersion() {
-  eval $1=`brew list --versions | grep cowsay | sed 's/cowsay //g'`
+  eval $1=`brew list --formula --versions | grep cowsay | sed 's/cowsay //g'`
 }
 
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
