@@ -79,10 +79,15 @@ setopt hist_reduce_blanks
 }
 
 # +--- Plugin ---+
-export ZPLUG_HOME=/usr/local/opt/zplug
+if [ "$(uname)" == 'Darwin' ]  && [ "$(uname -m)" == 'x86_64' ]; then
+  export ZPLUG_HOME=/usr/local/opt/zplug
+
+elif [ "$(uname)" == 'Darwin' ]  && [ "$(uname -m)" == 'arm64' ]; then
+  export ZPLUG_HOME=/opt/homebrew/opt/zplug
+fi
 [ -f "$ZPLUG_HOME/init.zsh" ] || brew install zplug
-source $ZPLUG_HOME/init.zsh
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+source ~/.zplug/init.zsh
+# zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zsh-users/zsh-completions"
 zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
@@ -117,8 +122,8 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
-# +--- Spaceship prompt ---+
-SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
+# # +--- Spaceship prompt ---+
+# SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
 
 # +--- Setting for Hyper and Hyper-tab-icons ---+
 # Override auto-title when static titles are desired ($ title My new title)
@@ -148,3 +153,5 @@ eval $(thefuck --alias)
 
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"
+
+eval "$(starship init zsh)"
