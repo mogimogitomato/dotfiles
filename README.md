@@ -1,6 +1,6 @@
 # dotfiles
 
-- loading dotfile under the root folder    
+- loading dotfile under the root folder
 .gitconfig  
 .hyper.js  
 .vimrc  
@@ -16,3 +16,18 @@ other dotfiles
 
 - loading vscode settings  
 → `sh .vscode/vscode_restore.sh`  
+
+# brewfile
+
+`cd .brewfile && brew bundle`
+
+# vim
+
+in terminal  
+
+```sh
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
+```
+
+then open vim, and execute `call dein#install()`  
