@@ -15,7 +15,15 @@ other dotfiles
 → `sh fortune_cowsay.sh`  
 
 - loading vscode settings  
-→ `sh .vscode/vscode_restore.sh`  
+→ `sh .vscode/vscode_restore.sh`
+
+# zsh
+
+- zplug
+`curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh`
+
+- starship
+`curl -sS https://starship.rs/install.sh | sh`
 
 # brewfile
 
