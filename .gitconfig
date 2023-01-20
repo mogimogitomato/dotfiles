@@ -22,7 +22,7 @@
     ci-am = commit --amend
     ci-m = commit -m
     co = checkout
-    d = diff
+    df = diff
     dc = diff --cached
     dw  = diff --color-words --word-diff-regex='[-a-zA-Z0-9_]+|.'
     dwc = diff --color-words --word-diff-regex='[-a-zA-Z0-9_]+|.' --cached
