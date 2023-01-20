@@ -17,7 +17,7 @@ $version = "3.03";
 $progname = basename($0);
 $eyes = "oo";
 $tongue = "  ";
-$cowpath = $ENV{'COWPATH'} || '/usr/local/Cellar/cowsay/3.04/share/cows';
+$cowpath = dirname($0);
 @message = ();
 $thoughts = "";
 

@@ -105,7 +105,7 @@ source ~/.zshalias
 # +--- Meigen ---+
 # lain meigen
 linkpath=$(readlink .zshrc)
-date; fortune meigen | $(dirname "$linkpath")/cowsay -f lain -n -W
+date; fortune meigen | $(dirname "$linkpath")/.cowsay/cowsay -f lain -n -W
 
 # # +--- Spaceship prompt ---+
 # SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
