@@ -14,9 +14,6 @@ other dotfiles
 - add cowsay's image, and fortune's japanese text(for Mac)  
 → `sh fortune_cowsay.sh`  
 
-- loading vscode settings  
-→ `sh .vscode/vscode_restore.sh`
-
 # zsh
 
 - zplug
