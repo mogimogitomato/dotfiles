@@ -102,23 +102,10 @@ zplug load
 # +--- Aliases ---+
 source ~/.zshalias
 
-# +--- Sub command ---+
-# 直前に実行したコマンドをpetに追加する
-pet-prev() {
-  PREV=$(fc -lrn | head -n 1)
-  sh -c "pet new -t `printf %q "$PREV"`"
-}
-# Bind ghq and peco (https://qiita.com/strsk/items/9151cef7e68f0746820d)
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^]' peco-src
+# +--- Meigen ---+
+# lain meigen
+linkpath=$(readlink .zshrc)
+date; fortune meigen | $(dirname "$linkpath")/cowsay -f lain -n -W
 
 # # +--- Spaceship prompt ---+
 # SPACESHIP_CHAR_SYMBOL="ζ*'ヮ')ζ＜ "
