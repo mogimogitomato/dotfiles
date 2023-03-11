@@ -2,6 +2,3 @@
 ctrl + y    一階層上に上がる
 ctrl + w    カーソル位置から手前側に向かって単語単位で削除
 Ctrl-[      直前コマンドの単語を挿入
-
-pet-prev    直前に実行したコマンドをpetに追加する
-Ctrl-]      ghq + pecoでworkspace内のリポジトリを検索し移動
