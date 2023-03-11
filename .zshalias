@@ -8,10 +8,6 @@ darwin*)
     abbrev-alias l="exa"
     abbrev-alias la="exa -alhg --group-directories-first --git --time-style long-iso"
     abbrev-alias ll="exa -alhg --group-directories-first --git --time-style long-iso"
-  } || {
-    abbrev-alias l="ls -laG" # G: macOSで色を付ける
-    abbrev-alias la="ls -lahG"
-    abbrev-alias ll="ls -lahG"
   }
   type fd > /dev/null && {
     abbrev-alias find="fd"
@@ -48,7 +44,8 @@ abbrev-alias -g vi="vim"
 abbrev-alias -g isolate='npm start --prefix $HOME/workspace/isolate &'
 abbrev-alias -g tumbld='$HOME/workspace/tumbld/tumbld.sh $1'
 abbrev-alias -g youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
-abbrev-alias tree="tree -NC" # N: 文字化け対策, C:色をつける
+abbrev-alias -g tree="tree -NC" # N: 文字化け対策, C:色をつける
+abbrev-alias -g relogin='exec $SHELL -l'
 
 # bat
 abbrev-alias -g cat='bat'
