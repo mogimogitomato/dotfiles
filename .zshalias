@@ -33,12 +33,6 @@ linux*)
   ;;
 esac
 
-# control files
-abbrev-alias -g rm='rm -i'
-abbrev-alias -g cp='cp -i'
-abbrev-alias -g mv='mv -i'
-abbrev-alias -g mkdir='mkdir -p'
-
 # move directory
 alias cdd='cd $HOME/Desktop'
 alias cdev='cd $HOME/workspace'
@@ -55,12 +49,6 @@ abbrev-alias -g isolate='npm start --prefix $HOME/workspace/isolate &'
 abbrev-alias -g tumbld='$HOME/workspace/tumbld/tumbld.sh $1'
 abbrev-alias -g youtube-dl='youtube-dl -f bestvideo+bestaudio --merge-output-format mp4 $1'
 abbrev-alias tree="tree -NC" # N: 文字化け対策, C:色をつける
-
-# pet
-abbrev-alias -g pet-s='pet search'
-abbrev-alias -g pet-cp='pet search | pbcopy'
-abbrev-alias -g pet-e='pet exec'
-abbrev-alias -g pet-n='pet new -t'
 
 # bat
 abbrev-alias -g cat='bat'
