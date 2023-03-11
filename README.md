@@ -36,3 +36,9 @@ sh ./installer.sh ~/.cache/dein
 ```
 
 then open vim, and execute `call dein#install()`  
+
+ # pip
+
+`pip install -r pip/requirements.txt`
+
+
