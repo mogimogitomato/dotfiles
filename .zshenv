@@ -18,5 +18,9 @@ export PATH="$PATH:$GOPATH/bin"
 export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"
 
+# Set pyenv Path
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 # Set color scheme for bat
 export BAT_THEME="Nord"
