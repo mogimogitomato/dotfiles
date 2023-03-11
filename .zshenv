@@ -24,3 +24,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 
 # Set color scheme for bat
 export BAT_THEME="Nord"
+
+# Set OpenAI API key for wanna command
+export OPENAI_API_KEY="XXXXXX"
