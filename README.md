@@ -41,4 +41,5 @@ then open vim, and execute `call dein#install()`
 
 `pip install -r pip/requirements.txt`
 
-
+confirm list packages that are not dependencies of installed packages
+`pip list --not-required`
