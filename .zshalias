@@ -53,9 +53,6 @@ abbrev-alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 # bat
 abbrev-alias -g cat='bat'
 
-# hear master google
-abbrev-alias -g h='function hdi(){ howdoi $* -c -n 3; }; hdi'
-
 # live coding
 abbrev-alias -g orca='npm start --prefix ~/workspace/LiveCoding/ORCA_PROJ/Orca/desktop &'
 
