@@ -83,8 +83,7 @@ if [ "$(uname)" == 'Darwin' ]  && [ "$(uname -m)" == 'x86_64' ]; then
 elif [ "$(uname)" == 'Darwin' ]  && [ "$(uname -m)" == 'arm64' ]; then
   export ZPLUG_HOME=/opt/homebrew/opt/zplug
 fi
-[ -f "$ZPLUG_HOME/init.zsh" ] || brew install zplug
-source ~/.zplug/init.zsh
+source ${ZPLUG_HOME}/init.zsh
 # zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zsh-users/zsh-completions"
 zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"

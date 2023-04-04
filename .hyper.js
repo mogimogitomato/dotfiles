@@ -98,11 +98,7 @@ module.exports = {
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     // shell: 'C:\\Program Files\\Git\\bin\\bash.exe',
-    shell: '/usr/local/bin/zsh',
-
-    // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
-    // by default `['--login']` will be used
-    shellArgs: ['--login', '-i'],
+    shell: '/bin/zsh',
 
     // for environment variables
     // 下記はWindowsの環境変数に書き込んでもよい
