@@ -31,8 +31,7 @@ other dotfiles
 in terminal  
 
 ```sh
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
+please read 'https://github.com/Shougo/dein-installer.vim' and install dein
 ```
 
 then open vim, and execute `call dein#install()`  
