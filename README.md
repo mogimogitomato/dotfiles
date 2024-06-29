@@ -34,6 +34,7 @@ in terminal
 please read 'https://github.com/Shougo/dein-installer.vim' and install dein
 ```
 
+Make .vimrc's symlink to replace dein's default .vimrc
 then open vim, and execute `call dein#install()`  
 
  # pip
